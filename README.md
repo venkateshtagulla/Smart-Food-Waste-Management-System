@@ -2,6 +2,12 @@
 
 A comprehensive full-stack application for managing food inventory, tracking waste, and optimizing redistribution to minimize food waste. Built with React frontend, Node.js backend, and MySQL database.
 
+[![Live Project](https://img.shields.io/badge/Live%20Project-Visit%20Now-brightgreen)](https://food-waste-management-system-67c9.onrender.com)
+
+## Live Project
+
+Check out the live project [here](https://food-waste-management-system-67c9.onrender.com)
+
 ## 🚀 Features
 
 ### Core Functionality
@@ -35,7 +41,7 @@ A comprehensive full-stack application for managing food inventory, tracking was
 
 ### Database
 - **MySQL** - Relational database
-- **PlanetScale** - Cloud database platform (production)
+- **Aiven** - Cloud database platform (production)
 - **Complex Triggers** - Automated waste logging
 - **Stored Procedures** - Business logic optimization
 
@@ -83,7 +89,7 @@ smart-food-waste-management/
 
 ### Prerequisites
 - Node.js 16+
-- MySQL 8.0+ (or PlanetScale account)
+- MySQL 8.0+ (or Aiven account)
 - Git
 
 ### Installation
@@ -120,9 +126,9 @@ DATABASE_NAME=food_waste_db
 PORT=5000
 ```
 
-For PlanetScale:
+For aiven:
 ```env
-DATABASE_URL=mysql://username:password@host/database_name?ssl={"rejectUnauthorized":true}
+DATABASE_URL=mysql://avnadmin:YOUR_PASSWORD@foodwastemanager-foodwastemanager.b.aivencloud.com:12778/defaultdb?ssl={"rejectUnauthorized":true}
 ```
 
 5. **Start the application**
@@ -130,7 +136,7 @@ DATABASE_URL=mysql://username:password@host/database_name?ssl={"rejectUnauthoriz
 Development mode (frontend + backend):
 ```bash
 # Terminal 1: Start backend server
-npm run dev-server
+npm start
 
 # Terminal 2: Start frontend development server
 npm run dev
@@ -186,15 +192,15 @@ const dbConfig = {
 };
 ```
 
-**PlanetScale:**
+**aiven:**
 ```javascript
 const dbConfig = {
   host: process.env.DATABASE_HOST,
   user: process.env.DATABASE_USER,
+  port: process.env.DATABASE_PORT,
   password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE_NAME,
-  ssl: { rejectUnauthorized: true }
-};
+  ssl: process.env.DATABASE_SSL ? { rejectUnauthorized: false } : undefined,
 ```
 
 ### Frontend Configuration
@@ -239,17 +245,14 @@ The frontend automatically proxies API requests to the backend server running on
 4. Set build command: `npm install`
 5. Set start command: `node backend/server.js`
 
-### Database Deployment (PlanetScale)
-1. Create PlanetScale account and database
-2. Import schema using PlanetScale CLI or web interface
+### Database Deployment (aiven)
+1. Create aiven account and database
+2. Import schema using aiven CLI or web interface
 3. Configure connection string in environment variables
 
 ### Frontend Deployment
 The React frontend can be deployed to any static hosting service:
-- Netlify
-- Vercel
-- GitHub Pages
-- AWS S3
+- Render
 
 ## 🤝 Contributing
 

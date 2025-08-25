@@ -19,7 +19,7 @@ const dbConfig = {
   password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE_NAME,
   //ssl: { rejectUnauthorized: false },
-  ssl: process.env.DATABASE_SSL ? { rejectUnauthorized: true } : undefined,
+  ssl: process.env.DATABASE_SSL ? { rejectUnauthorized: false } : undefined,
 };
 
 // Create database connection pool

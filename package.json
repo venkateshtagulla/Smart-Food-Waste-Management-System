@@ -1,0 +1,31 @@
+{
+  "name": "smart-food-waste-management",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node backend/server.js",
+    "dev-server": "cd backend && node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "bootstrap": "^5.3.7",
+    "chart.js": "^4.5.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "lucide-react": "^0.344.0",
+    "mysql2": "^3.11.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.2"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}
